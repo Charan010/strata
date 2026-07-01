@@ -30,7 +30,6 @@ func (d *DataFile) Replay(fn func(*Record, int64, uint32) error) error {
 		}
 
 		size := uint32(len(line) + 1)
-
 		if err := fn(&record, offset, size); err != nil {
 			return err
 		}
